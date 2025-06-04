@@ -7,7 +7,7 @@
 
 ## 🚀 **Live Demo**
 
-🔗 **Access the live application**: [https://admin-analytics-system.vercel.app/dashboard](https://admin-analytics-system.vercel.app/dashboard)
+🔗 **Access the live application**: [https://admin-analytics-system.vercel.app/dashboard](https://admin-analytics-system.vercel.app/)
 
 ### Demo Credentials
 - **Email**: `admin@example.com`
