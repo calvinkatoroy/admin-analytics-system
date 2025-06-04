@@ -1,0 +1,11 @@
+[phases.setup]
+nixPkgs = ["nodejs-18_x"]
+
+[phases.install]
+cmd = "cd backend && npm ci"
+
+[phases.build]
+cmd = "cd backend && npm run build || echo 'No build step needed'"
+
+[start]
+cmd = "cd backend && npm start"
