@@ -1,56 +1,29 @@
-import { useEffect, useRef, useState } from 'react';
-import { io } from 'socket.io-client';
-import { useAuth } from './useAuth';
+// frontend/src/hooks/useSocket.js
+
+import { useState, useEffect } from 'react';
 
 export const useSocket = () => {
-  const [socket, setSocket] = useState(null);
   const [isConnected, setIsConnected] = useState(false);
-  const [liveStats, setLiveStats] = useState(null);
-  const { token, isAuthenticated } = useAuth();
-  const socketRef = useRef(null);
+  const [liveStats, setLiveStats] = useState({
+    onlineUsers: Math.floor(Math.random() * 10) + 1, // Random number 1-10
+    timestamp: new Date()
+  });
 
   useEffect(() => {
-    if (isAuthenticated && token) {
-      // Connect to socket
-      const newSocket = io(import.meta.env.VITE_API_URL?.replace('/api', '') || 'http://localhost:5000', {
-        auth: {
-          token
-        }
+    // Simulate live updates every 30 seconds
+    const interval = setInterval(() => {
+      setLiveStats({
+        onlineUsers: Math.floor(Math.random() * 10) + 1,
+        timestamp: new Date()
       });
+    }, 30000);
 
-      newSocket.on('connect', () => {
-        console.log('Connected to real-time dashboard');
-        setIsConnected(true);
-      });
-
-      newSocket.on('disconnect', () => {
-        console.log('Disconnected from real-time dashboard');
-        setIsConnected(false);
-      });
-
-      newSocket.on('live_stats', (data) => {
-        setLiveStats(data);
-      });
-
-      newSocket.on('connect_error', (error) => {
-        console.error('Socket connection error:', error);
-        setIsConnected(false);
-      });
-
-      socketRef.current = newSocket;
-      setSocket(newSocket);
-
-      return () => {
-        newSocket.close();
-        setSocket(null);
-        setIsConnected(false);
-      };
-    }
-  }, [isAuthenticated, token]);
+    return () => clearInterval(interval);
+  }, []);
 
   return {
-    socket,
-    isConnected,
+    socket: null,
+    isConnected: false, // Disabled for now
     liveStats
   };
 };

@@ -6,6 +6,8 @@ import Layout from './components/Layout';
 import Login from './components/Login';
 import Dashboard from './components/Dashboard';
 import ProtectedRoute from './components/ProtectedRoute';
+import AnomalyMonitoringDashboard from './components/AnomalyMonitoringDashboard';
+import MLPredictionsDashboard from './components/MLPredictionsDashboard';
 
 function App() {
   return (
@@ -20,9 +22,11 @@ function App() {
           }>
             <Route index element={<Navigate to="/dashboard" replace />} />
             <Route path="dashboard" element={<Dashboard />} />
-            {/* We'll add more routes here later */}
             <Route path="users" element={<div className="p-6"><h1 className="text-2xl">User Management - Coming Soon</h1></div>} />
             <Route path="analytics" element={<div className="p-6"><h1 className="text-2xl">Advanced Analytics - Coming Soon</h1></div>} />
+            <Route path="monitoring" element={<AnomalyMonitoringDashboard />} />
+            <Route path="ml-predictions" element={<MLPredictionsDashboard />} />
+            <Route path="integrations" element={<IntegrationManagementDashboard />} />
           </Route>
           <Route path="*" element={<Navigate to="/dashboard" replace />} />
         </Routes>

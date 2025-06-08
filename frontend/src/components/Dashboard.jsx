@@ -25,6 +25,7 @@ import { useApi } from '../hooks/useApi';
 import { useSocket } from '../hooks/useSocket';
 import StatCard from './common/StatCard';
 import DataTable from './common/DataTable';
+import AIChatAssistant from './AIChatAssistant';
 
 const COLORS = ['#3B82F6', '#10B981', '#F59E0B', '#EF4444', '#8B5CF6'];
 
@@ -283,6 +284,8 @@ const Dashboard = () => {
           emptyMessage="No recent activities"
         />
       </div>
+
+      <AIChatAssistant />
     </div>
   );
 };

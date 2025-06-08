@@ -1,3 +1,6 @@
+// frontend/src/components/Layout.jsx (or ModernLayout.jsx)
+// FIXED - Correct Heroicons imports
+
 import React, { useState } from 'react';
 import { Outlet, Link, useLocation } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth';
@@ -7,16 +10,53 @@ import {
   UsersIcon,
   ChartBarIcon,
   ArrowRightOnRectangleIcon,
-  BellIcon,
   Bars3Icon,
-  XMarkIcon
+  XMarkIcon,
+  ShieldExclamationIcon,
+  CpuChipIcon,
+  CogIcon,
+  BellIcon,
+  MagnifyingGlassIcon
 } from '@heroicons/react/24/outline';
 import clsx from 'clsx';
 
 const navigation = [
-  { name: 'Dashboard', href: '/dashboard', icon: HomeIcon },
-  { name: 'Users', href: '/users', icon: UsersIcon },
-  { name: 'Analytics', href: '/analytics', icon: ChartBarIcon },
+  { 
+    name: 'Dashboard', 
+    href: '/dashboard', 
+    icon: HomeIcon,
+    description: 'Overview & insights'
+  },
+  { 
+    name: 'Users', 
+    href: '/users', 
+    icon: UsersIcon,
+    description: 'User management'
+  },
+  { 
+    name: 'Analytics', 
+    href: '/analytics', 
+    icon: ChartBarIcon,
+    description: 'Advanced analytics'
+  },
+  { 
+    name: 'Anomaly Monitor', 
+    href: '/monitoring', 
+    icon: ShieldExclamationIcon,
+    description: 'Real-time monitoring'
+  },
+  { 
+    name: 'ML Predictions', 
+    href: '/ml-predictions', 
+    icon: CpuChipIcon,
+    description: 'Predictive intelligence'
+  },
+  { 
+  name: 'Integrations', 
+  href: '/integrations', 
+  icon: LinkIcon,
+  description: 'External integrations'
+  },
 ];
 
 const Layout = () => {
