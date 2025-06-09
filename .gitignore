@@ -1,1 +1,6 @@
 "node_modules/\n.env\n*.log" 
+
+# Environment variables
+.env
+.env.* 
+backend/.env
