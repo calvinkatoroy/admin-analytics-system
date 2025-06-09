@@ -80,7 +80,7 @@ A comprehensive **NoSQL MongoDB implementation** featuring a modern admin analyt
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/admin-analytics-mongodb.git
+git clone https://github.com/calvinkatoroy/admin-analytics-system.git
 cd admin-analytics-mongodb
 
 # Start all services with Docker Compose
@@ -97,7 +97,7 @@ open http://localhost:3000
 
 ```bash
 # Clone and install dependencies
-git clone https://github.com/yourusername/admin-analytics-mongodb.git
+git clone https://github.com/calvinkatoroy/admin-analytics-system.git
 cd admin-analytics-mongodb/backend
 npm install
 
@@ -447,11 +447,18 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 👨‍💻 Author
 
-**[Your Name]**
-- Institution: [Your University/Institution]
-- Email: [your.email@university.edu]
-- GitHub: [@yourusername](https://github.com/yourusername)
-- LinkedIn: [Your LinkedIn Profile](https://linkedin.com/in/yourprofile)
+**Calvin Wirathama Katoroy**
+- Institution: University of Indonesia
+- NPM: 2306242395
+- Email: calvin.wirathama@ui.ac.id
+- GitHub: [@calvinkatoroy](https://github.com/calvinkatoroy)
+- LinkedIn: [Calvin Wirathama Katoroy](https://linkedin.com/in/calvinkatoroy)
+
+## Non-Contributing Members
+
+**Farhan Ramadhani Zakiyyandi**
+
+**Rain Elgatrio**
 
 ## 🙏 Acknowledgments
 
@@ -475,6 +482,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ⭐ **Star this repository if you found it helpful!**
 
-🐛 **Found a bug?** [Open an issue](https://github.com/yourusername/admin-analytics-mongodb/issues)
+🐛 **Found a bug?** [Open an issue](https://github.com/yourusername/admin-analytics-system/issues)
 
-💡 **Have a suggestion?** [Start a discussion](https://github.com/yourusername/admin-analytics-mongodb/discussions)
+💡 **Have a suggestion?** [Start a discussion](https://github.com/yourusername/admin-analytics-system/discussions)
