@@ -59,7 +59,8 @@ const generateUsers = async (count = 500) => {
   for (let i = 0; i < 5; i++) {
     const firstName = firstNames[Math.floor(Math.random() * firstNames.length)];
     const lastName = lastNames[Math.floor(Math.random() * lastNames.length)];
-    const username = `${firstName.toLowerCase()}_${lastName.toLowerCase()}_admin`;
+    // Create shorter username to stay within 20 char limit
+    const username = `${firstName.substring(0, 6).toLowerCase()}${i + 1}_admin`;
     
     users.push({
       email: `${firstName.toLowerCase()}.${lastName.toLowerCase()}@company.com`,
@@ -83,7 +84,9 @@ const generateUsers = async (count = 500) => {
     const firstName = firstNames[Math.floor(Math.random() * firstNames.length)];
     const lastName = lastNames[Math.floor(Math.random() * lastNames.length)];
     const domain = domains[Math.floor(Math.random() * domains.length)];
-    const username = `${firstName.toLowerCase()}_${lastName.toLowerCase()}_${Math.floor(Math.random() * 1000)}`;
+    // Create shorter username to stay within 20 char limit
+    const randomNum = Math.floor(Math.random() * 999) + 1;
+    const username = `${firstName.substring(0, 6).toLowerCase()}${randomNum}`;
     
     // Generate realistic registration date (last 2 years)
     const registrationDate = new Date(Date.now() - Math.random() * 2 * 365 * 24 * 60 * 60 * 1000);
@@ -94,7 +97,7 @@ const generateUsers = async (count = 500) => {
     const lastLogin = new Date(Date.now() - maxDaysSinceLogin * 24 * 60 * 60 * 1000);
     
     users.push({
-      email: `${firstName.toLowerCase()}.${lastName.toLowerCase()}${Math.floor(Math.random() * 1000)}@${domain}`,
+      email: `${firstName.toLowerCase()}.${lastName.toLowerCase()}${randomNum}@${domain}`,
       username,
       password: 'user123',
       role: 'user',
@@ -390,7 +393,8 @@ const seedData = async () => {
     console.log(`📋 Activity Logs: 50,000`);
     console.log('\n🔐 Login Credentials:');
     console.log('Admin: admin@company.com / admin123');
-    console.log('Test User: john_doe_123@gmail.com / user123');
+    console.log('Test Users: Check database for generated usernames / user123');
+    console.log('Examples: john1, sarah23, mike456 (all use password: user123)');
     console.log('\n🎯 Your admin dashboard now has realistic data for testing!');
     
     process.exit(0);
